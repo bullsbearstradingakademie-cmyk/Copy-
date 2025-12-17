@@ -175,4 +175,4 @@ res.json(rows.map(r => ({ seq: r.seq, ...JSON.parse(r.payload), created_at: r.cr
 
 })
 
-app.listen(PORT, () => console.log(Server on ${PORT}))
+app.listen(PORT, () => console.log(`Server on ${PORT}`))
