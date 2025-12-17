@@ -79,7 +79,7 @@ res.json({ copy_id: req.params.copy_id, token });
 });
 
 app.post("/events", requireCustomer, (req, res) => {
-const copy_id = req.headers["x-copy-id"] || req.query.copy_id;
+const copy_id = req.headers["x-conv-id"] || req.query.conv_id;
 const { seq = 0, ...rest } = req.body || {};
 db.prepare("INSERT INTO events(copy_id,seq,payload) VALUES(?,?,?)").run(
 copy_id,
