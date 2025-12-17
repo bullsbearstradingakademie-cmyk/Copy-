@@ -24,8 +24,8 @@ fs.closeSync(fs.openSync(dbFile, "a"))
 
 const db = new Database(dbFile)
 
-db.prepare("CREATE TABLE IF NOT EXISTS customers( id INTEGER PRIMARY KEY AUTOINCREMENT, copy_id TEXT UNIQUE, token TEXT, name TEXT, email TEXT, blocked INTEGER DEFAULT 0, created_at DATETIME DEFAULT CURRENT_TIMESTAMP )").run()
-db.prepare("CREATE TABLE IF NOT EXISTS events( id INTEGER PRIMARY KEY AUTOINCREMENT, copy_id TEXT, seq INTEGER, payload TEXT, created_at DATETIME DEFAULT CURRENT_TIMESTAMP )").run()
+db.prepare("CREATE TABLE IF NOT EXISTS customers ( id INTEGER PRIMARY KEY AUTOINCREMENT, copy_id TEXT UNIQUE, token TEXT, name TEXT, email TEXT, blocked INTEGER DEFAULT 0, created_at DATETIME DEFAULT CURRENT_TIMESTAMP )").run()
+db.prepare("CREATE TABLE IF NOT EXISTS events ( id INTEGER PRIMARY KEY AUTOINCREMENT, copy_id TEXT, seq INTEGER, payload TEXT, created_at DATETIME DEFAULT CURRENT_TIMESTAMP )").run()
 
 app.use(express.json())
 app.use(cors())
