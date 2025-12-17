@@ -106,5 +106,5 @@ seq: r.seq,
 created_at: r.created_at
 })));
 });
-
-app.listen(PORT, () => console.log(Server on ${PORT}));
+const PORT = process.env.PORT || 3000
+app.listen(PORT, () => console.log(Server on ${PORT}))
